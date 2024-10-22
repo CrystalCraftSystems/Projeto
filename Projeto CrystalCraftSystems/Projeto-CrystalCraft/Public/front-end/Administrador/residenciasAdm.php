@@ -38,12 +38,6 @@
     </div>
 </div>
 
-<div class="field">
-    <label class="label">Nome do morador</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Digite o nome do morador" name="nomeResidencia">
-    </div>
-</div>
 
 
 

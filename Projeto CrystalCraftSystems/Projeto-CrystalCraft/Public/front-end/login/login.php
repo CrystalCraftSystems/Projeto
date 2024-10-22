@@ -22,7 +22,7 @@
                     <form action="inicio.php" method="post">
                         <div class="field">
                             
-                                <input class="input" type="email" placeholder="✉️ Digite o seu email" name="Email"/>
+                                <input class="input" type="email" placeholder="✉️ Digite o seu email" name="email"/>
                                
                         </div>
                         <div class="field">

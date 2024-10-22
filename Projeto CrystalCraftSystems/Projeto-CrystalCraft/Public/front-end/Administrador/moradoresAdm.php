@@ -25,16 +25,9 @@
 </div>
 
 <div class="field">
-    <label class="label">Bloco</label>
+    <label class="label">ID da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o bloco em que o morador reside" name="blocoMorador">
-    </div>
-</div>
-
-<div class="field">
-    <label class="label">Número da residência</label>
-    <div class="control">
-        <input class="input" type="text" placeholder="Digite o número da residência do morador" name="numeroMorador">
+        <input class="input" type="text" placeholder="Digite o identificador da residência do morador" name="IDRMorador">
     </div>
 </div>
 
