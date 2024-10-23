@@ -3,14 +3,14 @@
 class Usuarios
 {
 
-    private string $idUsuario;
-    private string $nome;
-    private string $senha;
-    private string $email;
-    private string $cpf;
-    private string $dataNascimento;
-    private bool $permissaoEspecial;
-    private string $codAdm;
+    public string $idUsuario;
+    public string $nomeUsuario;
+    public string $senha;
+    public string $emailUsuario;
+    public string $cpfUsuario;
+    public string $dataNascimentoUsuario;
+    public bool $permissaoEspecial;
+    public string $codAdm;
 
     
     public function getIdUsuario():string
@@ -26,14 +26,14 @@ class Usuarios
     }
 
  
-    public function getNome():string
+    public function getNomeUsuario():string
     {
-        return $this->nome;
+        return $this->nomeUsuario;
     }
 
-    public function setNome(string $nome)
+    public function setNomeUsuario(string $nomeUsuario)
     {
-        $this->nome = $nome;
+        $this->nomeUsuario = $nomeUsuario;
 
         return $this;
     }
@@ -50,38 +50,38 @@ class Usuarios
         return $this;
     }
 
-    public function getEmail():string
+    public function getEmailUsuario():string
     {
-        return $this->email;
+        return $this->emailUsuario;
     }
 
-    public function setEmail(string $email)
+    public function setEmailUsuario(string $emailUsuario)
     {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    public function getCpf():string
-    {
-        return $this->cpf;
-    }
- 
-    public function setCpf(string $cpf)
-    {
-        $this->cpf = $cpf;
+        $this->emailUsuario = $emailUsuario;
 
         return $this;
     }
- 
-    public function getDataNascimento():string
+
+    public function getCpfUsuario():string
     {
-        return $this->dataNascimento;
+        return $this->cpfUsuario;
+    }
+ 
+    public function setCpfUsuario(string $cpfUsuario)
+    {
+        $this->cpfUsuario = $cpfUsuario;
+
+        return $this;
+    }
+ 
+    public function getDataNascimentoUsuario():string
+    {
+        return $this->dataNascimentoUsuario;
     }
 
-    public function setDataNascimento(string $dataNascimento)
+    public function setDataNascimentoUsuario(string $dataNascimentoUsuario)
     {
-        $this->dataNascimento = $dataNascimento;
+        $this->dataNascimentoUsuario = $dataNascimentoUsuario;
 
         return $this;
     }
