@@ -1,5 +1,5 @@
 <?php require __DIR__ . "/../cabecalho.php"; 
-require __DIR__ . "/index.php";?>
+?>
 <style>
     h1{
         font-size: 27px;

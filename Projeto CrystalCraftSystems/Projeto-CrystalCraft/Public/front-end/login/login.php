@@ -19,7 +19,7 @@
                     </div>
 
 
-                    <form action="inicio.php?acao=login" method="post">
+                    <form action="index.php?acao=login" method="post">
                         <div class="field">
                             
                                 <input class="input" type="email" placeholder="✉️ Digite o seu email" name="email"/>

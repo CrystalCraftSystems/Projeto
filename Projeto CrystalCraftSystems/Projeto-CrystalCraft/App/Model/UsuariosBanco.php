@@ -1,14 +1,13 @@
 <?php
 require __DIR__."/Usuarios.php";
 
-use Usuarios;
 class UsuariosBanco{
     private $pdo;
 
     public function __construct()
     {
         require __DIR__."/../Data/conectarbanco.php";
-        $this->pdo = $banco;
+        $this->pdo = $pdo;
     }
 
     public function cadastrarUsuario($emailUsuario,$senhaUsuario){
@@ -39,19 +38,9 @@ class UsuariosBanco{
         $comando->execute();
         $todosUsuarios = $comando->fetchAll(PDO::FETCH_ASSOC);
         
-        return $this->hidratar($todosUsuarios) ;
+      //  return $this->hidratar($todosUsuarios) ;
     }
 
-    public function hidratar($array){
-        $todos = [];
 
-        foreach($array as $dado){
-            $objeto= new Usuarios();
-            $objeto->setEmailUsuario($dado['email']);
-            $objeto->setSenha($dado['senha']);
-            $todos[]=$objeto;
-        }
-        return $todos;
-    }
 
 }
