@@ -13,16 +13,16 @@ class Usuarios
     
 
     
-    public function getIdUsuario():string
+    public function getIdUsuario(): string
     {
         return $this->idUsuario;
     }
 
-    public function setIdUsuario(string $idUsuario)
+    public function setIdUsuario(string $idUsuario): string
     {
         $this->idUsuario = $idUsuario;
 
-        return $this;
+       
     }
 
  

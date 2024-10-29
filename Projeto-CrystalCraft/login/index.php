@@ -2,7 +2,6 @@
 require __DIR__ . "/Controller/validarUsuario.php";
 require __DIR__."/../App/Model/UsuariosBanco.php";
 require __DIR__ . "/../header.php";
-require __DIR__."/../UsuarioComum/Public/inicio.php";
 
 
 if (isset($_GET['acao'])) {
@@ -11,7 +10,8 @@ if (isset($_GET['acao'])) {
         $resultado = (new validarUsuario)->retornar();
        
        if (!empty($resultado)){
-       
+        require __DIR__."/../UsuarioComum/Public/inicio.php";
+
        };
        
     }

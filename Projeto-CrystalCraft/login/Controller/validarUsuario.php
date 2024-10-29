@@ -31,7 +31,7 @@ class validarUsuario
         }
 
 
-        $usuarioExiste = (new UsuariosBanco())->verificarSeExiste($_POST['email'], $_POST['senha'], $_POST['idUsuario'],);
+        $usuarioExiste = (new UsuariosBanco())->verificarSeExiste($_POST['idUsuario'], $_POST['email'], $_POST['senha']);
 
         if (empty($usuarioExiste)) {
             die("Este usuário não existe!");

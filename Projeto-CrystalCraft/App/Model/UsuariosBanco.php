@@ -22,23 +22,24 @@ class UsuariosBanco
     // return $comando->execute();
     //  }
 
-    public function verificarSeExiste($emailUsuario, $senhaUsuario, $idUsuario)
+    public function verificarSeExiste($idUsuario,$emailUsuario, $senha)
     {
-        $sql = "SELECT * FROM usuario WHERE email=:e , senha = :s and idUsuario= :i";
+        $sql = "SELECT * FROM usuario WHERE idUsuario= :i and email=:e and senha = :s ";
         $comando = $this->pdo->prepare($sql);
-        $comando->bindValue("e", $emailUsuario);
-        $comando->bindValue("s", $senhaUsuario);
         $comando->bindValue("i", $idUsuario);
+        $comando->bindValue("e", $emailUsuario);
+        $comando->bindValue("s", $senha);
+       
         $comando->execute();
 
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function verificarSeAdmin($id)
+    public function verificarSeAdmin($idUsuario): string
     {
-        $sql = "SELECT * FROM usuario WHERE idUsuario=:i";
+        $sql = "SELECT * FROM usuario WHERE IDUSUARIO=:i";
         $comando = $this->pdo->prepare($sql);
-        $comando->bindValue("i", $id);
+        $comando->bindValue("i", $idUsuario);
 
         $comando->execute();
         
@@ -46,9 +47,9 @@ class UsuariosBanco
 
         if ($usuario->getPermissaoEspecial() == true){
             return true;
-        }
+        }else{
         return false;
-
+        }
     }
 
     public function hidratar($array)
