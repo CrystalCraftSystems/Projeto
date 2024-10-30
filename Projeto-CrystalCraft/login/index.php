@@ -10,12 +10,11 @@ if (isset($_GET['acao'])) {
         $resultado = (new validarUsuario)->retornar();
        
        if (!empty($resultado)){
-        require __DIR__."/../UsuarioComum/Public/inicio.php";
-
+        if((new UsuariosBanco())->verificarSeAdmin($_POST['idUsuario']== true)){
+            require __DIR__."/../Administrador/Public/usuariosAdm.php";
+        }require __DIR__."/../UsuarioComum/Public/inicio.php";
        };
        
     }
-    if((new UsuariosBanco())->verificarSeAdmin($_POST['idUsuario']== true)){
-        require __DIR__."/../Administrador/Public/usuariosAdm.php";
-    }require __DIR__."/../UsuarioComum/Public/inicio.php";
+    
 }

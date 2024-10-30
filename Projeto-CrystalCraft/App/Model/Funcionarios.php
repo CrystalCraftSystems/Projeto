@@ -2,10 +2,10 @@
 class Funcionarios{
 
     public string $idFuncionario;
-    public string $nome;
-    public string $cpf;
-    public string $dataNascimento;
-    public string $funcao;
+    public string $nomeFuncionario;
+    public string $cpfFuncionario;
+    public string $dataNascimentoFuncionario;
+    public string $funcaoFuncionario;
 
 
     public function getIdFuncionario():string
@@ -16,60 +16,48 @@ class Funcionarios{
     public function setIdFuncionario(string $idFuncionario)
     {
         $this->idFuncionario = $idFuncionario;
-
-        return $this;
     }
 
    
-    public function getNome():string
+    public function getNomeFuncionario():string
     {
-        return $this->nome;
+        return $this->nomeFuncionario;
     }
 
 
-    public function setNome(string $nome)
+    public function setNomeFuncionario(string $nomeFuncionario)
     {
-        $this->nome = $nome;
-
-        return $this;
+        $this->nomeFuncionario = $nomeFuncionario;
     }
 
-  
-
-    public function getCpf():string
+    public function getCpfFuncionario():string
     {
-        return $this->cpf;
+        return $this->cpfFuncionario;
     }
 
-    public function setCpf(string $cpf)
+    public function setCpfFuncionario(string $cpfFuncionario)
     {
-        $this->cpf = $cpf;
-
-        return $this;
+        $this->cpfFuncionario = $cpfFuncionario;
     }
 
-    public function getDataNascimento():string
+    public function getDataNascimentoFuncionario():string
     {
-        return $this->dataNascimento;
+        return $this->dataNascimentoFuncionario;
     }
 
-    public function setDataNascimento(string $dataNascimento)
+    public function setDataNascimentoFuncionario(string $dataNascimentoFuncionario)
     {
-        $this->dataNascimento = $dataNascimento;
-
-        return $this;
+        $this->dataNascimentoFuncionario = $dataNascimentoFuncionario;
     }
 
-    public function getFuncao()
+    public function getFuncaoFuncionario()
     {
-        return $this->funcao;
+        return $this->funcaoFuncionario;
     }
 
-    public function setFuncao($funcao)
+    public function setFuncaoFuncionario($funcaoFuncionario)
     {
-        $this->funcao = $funcao;
-
-        return $this;
+        $this->funcaoFuncionario = $funcaoFuncionario;
     }
 }
 ?>

@@ -32,9 +32,9 @@
 </div>
 
 <div class="field">
-    <label class="label">Nome da pessoa visitada</label>
+    <label class="label">ID do morador visitado</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o nome do morador visitado" name="moradorVisitante">
+        <input class="input" type="text" placeholder="Digite o ID do morador visitado" name="idMoradorVisitante">
     </div>
 </div>
 
@@ -49,3 +49,5 @@
 </div>
 
     </form>
+
+    <?php require __DIR__."/../../footer.php"; ?>

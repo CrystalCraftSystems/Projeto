@@ -4,11 +4,12 @@ require __DIR__ . "/Usuarios.php";
 class UsuariosBanco
 {
     private $pdo;
-
+    
     public function __construct()
     {
         require __DIR__ . "/../Data/conectarbanco.php";
-        $this->pdo = $pdo;
+        $this->pdo = $pdo; 
+        
     }
 
     // public function cadastrarUsuario($emailUsuario,$senhaUsuario){
@@ -24,7 +25,7 @@ class UsuariosBanco
 
     public function verificarSeExiste($idUsuario,$emailUsuario, $senha)
     {
-        $sql = "SELECT * FROM usuario WHERE idUsuario= :i and email=:e and senha = :s ";
+        $sql = "SELECT * FROM usuarios WHERE IDUSUARIO= :i and EMAILUSUARIO=:e and SENHA = :s ";
         $comando = $this->pdo->prepare($sql);
         $comando->bindValue("i", $idUsuario);
         $comando->bindValue("e", $emailUsuario);
@@ -35,9 +36,9 @@ class UsuariosBanco
         return $comando->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function verificarSeAdmin($idUsuario): string
+    public function verificarSeAdmin($idUsuario)
     {
-        $sql = "SELECT * FROM usuario WHERE IDUSUARIO=:i";
+        $sql = "SELECT * FROM usuarios WHERE IDUSUARIO=:i";
         $comando = $this->pdo->prepare($sql);
         $comando->bindValue("i", $idUsuario);
 
@@ -59,11 +60,11 @@ class UsuariosBanco
         foreach ($array as $valor) {
             $usuario = new Usuarios();
             $usuario->setIdUsuario($valor['IDUSUARIO']);
-            $usuario->setNomeUsuario($valor['NOME']);
+            $usuario->setNomeUsuario($valor['NOMEUSUARIO']);
             $usuario->setSenha($valor['SENHA']);
-            $usuario->setEmailUsuario($valor['EMAIL']);
-            $usuario->setCpfUsuario($valor['CPF']);
-            $usuario->setDataNascimentoUsuario($valor['DATANASCIMENTO']);
+            $usuario->setEmailUsuario($valor['EMAILUSUARIO']);
+            $usuario->setCpfUsuario($valor['CPFUSUARIO']);
+            $usuario->setDataNascimentoUsuario($valor['DATANASCIMENTOUSUARIO']);
             $usuario->setPermissaoEspecial($valor['PERMISSAOESPECIAL']);
 
             $todos[] = $usuario;
@@ -75,11 +76,11 @@ class UsuariosBanco
     {
         $usuario = new Usuarios();
         $usuario->setIdUsuario($array['IDUSUARIO']);
-        $usuario->setNomeUsuario($array['NOME']);
+        $usuario->setNomeUsuario($array['NOMEUSUARIO']);
         $usuario->setSenha($array['SENHA']);
-        $usuario->setEmailUsuario($array['EMAIL']);
-        $usuario->setCpfUsuario($array['CPF']);
-        $usuario->setDataNascimentoUsuario($array['DATANASCIMENTO']);
+        $usuario->setEmailUsuario($array['EMAILUSUARIO']);
+        $usuario->setCpfUsuario($array['CPFUSUARIO']);
+        $usuario->setDataNascimentoUsuario($array['DATANASCIMENTOUSUARIO']);
         $usuario->setPermissaoEspecial($array['PERMISSAOESPECIAL']);
 
         return $usuario;

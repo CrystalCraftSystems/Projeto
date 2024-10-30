@@ -10,6 +10,12 @@
 
     <h1 class="title has-text-centered"><strong>Cadastrar usuário<strong></h1>
     <form action="usuariosAdm.php" method="post">
+    <div class="field">
+            <label class="label">ID do Usuário</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Digite o ID do usuário" name="idUsuario">
+            </div>
+        </div>
         <div class="field">
             <label class="label">Nome</label>
             <div class="control">
@@ -25,7 +31,14 @@
         <div class="field">
             <label class="label">Senha</label>
             <div class="control">
-                <input class="input" type="password" placeholder="Digite a senha do usuário" name="senhaUsuario">
+                <input class="input" type="password" placeholder="Digite a senha do usuário" name="senha">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">CPF</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Digite o CPF do usuário" name="cpfUsuario">
             </div>
         </div>
 
@@ -55,3 +68,5 @@
         </div>
     </form>
 </div>
+
+<?php require __DIR__."/../../footer.php"; ?>

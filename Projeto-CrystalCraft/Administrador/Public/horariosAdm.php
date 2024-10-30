@@ -9,25 +9,19 @@
 <div class="box">
 <h1 class="title has-text-centered"><strong>Registrar horários de entrada e saída<strong></h1>
     <form action="horariosAdm.php" method="post">
-        <div class="field">
+       
 
         <div class="field">
             <label class="label">ID do registro</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID " name="idHorarios">
-            </div>
-        </div>
-
-            <label class="label">Nome da pessoa</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Digite o nome" name="nomeHorario">
+                <input class="input" type="text" placeholder="Digite o ID " name="idRegistro">
             </div>
         </div>
 
         <div class="field">
             <label class="label">ID do visitante</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID do visitante" name="visitanteHorario">
+                <input class="input" type="text" placeholder="Digite o ID do visitante" name="idVisitanteHorario">
             </div>
         </div>
 
@@ -72,3 +66,5 @@
 </div>
 
     </form>
+
+    <?php require __DIR__."/../../footer.php"; ?>

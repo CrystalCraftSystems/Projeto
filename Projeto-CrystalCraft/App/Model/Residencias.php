@@ -5,9 +5,8 @@ class Residencias{
     public string $idResidencia;
     public int $numResidencia;
     public string $bloco;
-    public Moradores $cpf;
+    public Moradores $idMorador;
     
-
 
     public function getIdResidencia():string
     {
@@ -17,8 +16,6 @@ class Residencias{
     public function setIdResidencia(string $idResidencia)
     {
         $this->idResidencia = $idResidencia;
-
-        return $this;
     }
 
     public function getNumResidencia():int
@@ -29,8 +26,6 @@ class Residencias{
     public function setNumResidencia(int $numResidencia)
     {
         $this->numResidencia = $numResidencia;
-
-        return $this;
     }
  
     public function getBloco():string
@@ -41,8 +36,6 @@ class Residencias{
     public function setBloco(string $bloco)
     {
         $this->bloco = $bloco;
-
-        return $this;
     }
 }
 

@@ -27,7 +27,7 @@
                         </div>
                         <div class="field">
 
-                            <input class="input" type="email" placeholder="✉️ Digite o seu email" name="email" />
+                            <input class="input" type="email" placeholder="✉️ Digite o seu email" name="emailUsuario" />
 
                         </div>
                         <div class="field">

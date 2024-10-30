@@ -9,6 +9,14 @@
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar morador<strong></h1>
     <form action="moradoresAdm.php" method="post">
+
+    <div class="field">
+    <label class="label">ID do morador</label>
+    <div class="control">
+        <input class="input" type="text" placeholder="Digite o ID do morador" name="idMorador">
+    </div>
+</div>
+
     <div class="field">
 
     <label class="label">Nome</label>
@@ -27,7 +35,7 @@
 <div class="field">
     <label class="label">ID da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o identificador da residência do morador" name="IDRMorador">
+        <input class="input" type="text" placeholder="Digite o ID da residência do morador" name="IDResidenciaMorador">
     </div>
 </div>
 
@@ -44,3 +52,5 @@
 </div>
 
     </form>
+
+    <?php require __DIR__."/../../footer.php"; ?>

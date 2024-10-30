@@ -2,33 +2,40 @@
 
 class Moradores{
 
-    public string $cpf;
+    public string $idMorador;
+    public string $cpfMorador;
     public string $nomeMorador;
     public Residencias $idResidencia;
     
  
-    public function getCpf():string
+    public function getidMorador():string
     {
-        return $this->cpf;
+        return $this->idMorador;
     }
 
-    public function setCpf(string $cpf)
+    public function setidMorador(string $idMorador)
     {
-        $this->cpf = $cpf;
-
-        return $this;
+        $this->idMorador = $idMorador;
     }
 
-    public function getNome():string
+    public function getCpfMorador():string
+    {
+        return $this->cpfMorador;
+    }
+
+    public function setCpfMorador(string $cpfMorador)
+    {
+        $this->cpfMorador = $cpfMorador;
+    }
+
+    public function getNomeMorador():string
     {
         return $this->nomeMorador;
     }
 
-    public function setNome(string $nome)
+    public function setNomeMorador(string $nomeMorador)
     {
-        $this->nomeMorador = $nome;
-
-        return $this;
+        $this->nomeMorador = $nomeMorador;
     }
 }
 

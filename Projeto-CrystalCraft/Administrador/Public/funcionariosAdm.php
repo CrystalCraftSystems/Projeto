@@ -35,7 +35,7 @@
         <div class="field">
             <label class="label">Data de nascimento</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a data de nascimento YYYY-MM-DD" name="nascimentoFuncionario">
+                <input class="input" type="text" placeholder="Digite a data de nascimento YYYY-MM-DD" name="dataNascimentoFuncionario">
             </div>
         </div>
 
@@ -59,3 +59,5 @@
 </div>
 
     </form>
+
+    <?php require __DIR__."/../../footer.php"; ?>

@@ -3,9 +3,9 @@
 class Visitantes{
 
     public string $idVisitante;
-    public string $nome;
-    public string $descricao;
-    public string $nomeMorador;
+    public string $nomeVisitante;
+    public string $descricaoVisitante;
+    public Moradores $idMorador;
 
     public function getIdVisitante():string
     {
@@ -15,45 +15,28 @@ class Visitantes{
     public function setIdVisitante(string $idVisitante)
     {
         $this->idVisitante = $idVisitante;
-
-        return $this;
     }
 
-    public function getNome():string
+    public function getNomeVisitante():string
     {
-        return $this->nome;
+        return $this->nomeVisitante;
     }
 
-    public function setNome(string $nome)
+    public function setNomeVisitante(string $nomeVisitante)
     {
-        $this->nome = $nome;
-
-        return $this;
+        $this->nomeVisitante = $nomeVisitante;
     }
  
-    public function getDescricao():string
+    public function getDescricaoVisitante():string
     {
-        return $this->descricao;
+        return $this->descricaoVisitante;
     }
 
-    public function setDescricao(string $descricao)
+    public function setDescricaoVisitante(string $descricaoVisitante)
     {
-        $this->descricao = $descricao;
-
-        return $this;
+        $this->descricaoVisitante = $descricaoVisitante;
     }
 
-    public function getNomeMorador():string
-    {
-        return $this->nomeMorador;
-    }
-
-    public function setNomeMorador(string $nomeMorador)
-    {
-        $this->nomeMorador = $nomeMorador;
-
-        return $this;
-    }
 }
 
 ?>

@@ -18,11 +18,10 @@ class Usuarios
         return $this->idUsuario;
     }
 
-    public function setIdUsuario(string $idUsuario): string
+    public function setIdUsuario(string $idUsuario)
     {
         $this->idUsuario = $idUsuario;
-
-       
+ 
     }
 
  
@@ -35,7 +34,6 @@ class Usuarios
     {
         $this->nomeUsuario = $nomeUsuario;
 
-        return $this;
     }
 
     public function getSenha():string
@@ -47,7 +45,6 @@ class Usuarios
     {
         $this->senha = $senha;
 
-        return $this;
     }
 
     public function getEmailUsuario():string
@@ -58,8 +55,6 @@ class Usuarios
     public function setEmailUsuario(string $emailUsuario)
     {
         $this->emailUsuario = $emailUsuario;
-
-        return $this;
     }
 
     public function getCpfUsuario():string
@@ -70,8 +65,6 @@ class Usuarios
     public function setCpfUsuario(string $cpfUsuario)
     {
         $this->cpfUsuario = $cpfUsuario;
-
-        return $this;
     }
  
     public function getDataNascimentoUsuario():string
@@ -82,8 +75,6 @@ class Usuarios
     public function setDataNascimentoUsuario(string $dataNascimentoUsuario)
     {
         $this->dataNascimentoUsuario = $dataNascimentoUsuario;
-
-        return $this;
     }
 
     public function getPermissaoEspecial():bool 
@@ -95,7 +86,7 @@ class Usuarios
     {
         $this->permissaoEspecial = $permissaoEspecial;
 
-        return $this;
+
     }
 
  

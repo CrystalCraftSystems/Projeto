@@ -13,7 +13,7 @@ class validarUsuario
             die($mensagem);
         }
 
-        if ($_POST['email'] == "") {
+        if ($_POST['emailUsuario'] == "") {
             $mensagem = '
         <div class="notification is-danger">
             <button class="delete"></button>
@@ -31,7 +31,7 @@ class validarUsuario
         }
 
 
-        $usuarioExiste = (new UsuariosBanco())->verificarSeExiste($_POST['idUsuario'], $_POST['email'], $_POST['senha']);
+        $usuarioExiste = (new UsuariosBanco())->verificarSeExiste($_POST['idUsuario'], $_POST['emailUsuario'], $_POST['senha']);
 
         if (empty($usuarioExiste)) {
             die("Este usuário não existe!");

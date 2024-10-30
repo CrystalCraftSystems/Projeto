@@ -32,9 +32,9 @@
 </div>
 
 <div class="field">
-    <label class="label">CPF do morador</label>
+    <label class="label">ID do morador</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o CPF do morador" name="cpfResidencia">
+        <input class="input" type="text" placeholder="Digite o ID do morador" name="idMoradorResidencia">
     </div>
 </div>
 
@@ -52,3 +52,5 @@
 </div>
 
     </form>
+
+    <?php require __DIR__."/../../footer.php"; ?>

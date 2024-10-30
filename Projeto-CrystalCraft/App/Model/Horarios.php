@@ -3,7 +3,7 @@
 class Horarios{
     
     public Visitantes $idVisitante;
-    public string $idEntS;
+    public string $idRegistro;
     public string $data;
     public string $horaEntrada;
     public string $horaSaida;
@@ -11,16 +11,14 @@ class Horarios{
 
 
 
-    public function getIdEntS():string
+    public function getIdRegistro():string
     {
-        return $this->idEntS;
+        return $this->idRegistro;
     }
 
-    public function setIdEntS(string $idEntS)
+    public function setIdRegistro(string $idRegistro)
     {
-        $this->idEntS = $idEntS;
-
-        return $this;
+        $this->idRegistro = $idRegistro;
     }
  
     public function getData():string
@@ -32,8 +30,6 @@ class Horarios{
     public function setData(string $data)
     {
         $this->data = $data;
-
-        return $this;
     }
 
     public function getHoraEntrada():string
@@ -44,8 +40,6 @@ class Horarios{
     public function setHoraEntrada(string $horaEntrada)
     {
         $this->horaEntrada = $horaEntrada;
-
-        return $this;
     }
 
     public function getHoraSaida():string
@@ -56,8 +50,6 @@ class Horarios{
     public function setHoraSaida(string $horaSaida)
     {
         $this->horaSaida = $horaSaida;
-
-        return $this;
     }
 
     public function getPlacaVeiculo():string
@@ -68,8 +60,6 @@ class Horarios{
     public function setPlacaVeiculo(string $placaVeiculo)
     {
         $this->placaVeiculo = $placaVeiculo;
-
-        return $this;
     }
 }
 
