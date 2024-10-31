@@ -43,5 +43,14 @@ class validarUsuario
             Usuário logado
     </div>';
         echo $mensagem;
+
+
+        $user = (new UsuariosBanco())->verificarSeAdmin($_POST['idUsuario']);
+        if ($user) {
+           require __DIR__."/../../Administrador/Public/usuariosAdm.php";
+        } else {
+            require __DIR__."/../../UsuarioComum/Public/inicio.php";
+        }
+
     }
 }

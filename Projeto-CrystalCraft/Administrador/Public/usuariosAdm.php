@@ -9,7 +9,7 @@
 <div class="box">
 
     <h1 class="title has-text-centered"><strong>Cadastrar usuário<strong></h1>
-    <form action="usuariosAdm.php" method="post">
+    <form action="./index.php?acao=cadastrar" method="POST" >
     <div class="field">
             <label class="label">ID do Usuário</label>
             <div class="control">
@@ -39,6 +39,12 @@
             <label class="label">CPF</label>
             <div class="control">
                 <input class="input" type="text" placeholder="Digite o CPF do usuário" name="cpfUsuario">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Data de Nascimento do Usuário</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Digite a data de nascimento " name="dataNascimentoUsuario">
             </div>
         </div>
 

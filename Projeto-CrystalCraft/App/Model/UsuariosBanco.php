@@ -12,16 +12,21 @@ class UsuariosBanco
         
     }
 
-    // public function cadastrarUsuario($emailUsuario,$senhaUsuario){
-    //  $sql = "INSERT INTO usuario(email,senha) values (:e,:s)";
+     public function cadastrarUsuario($idUsuario,$nomeUsuario, $senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
+      $sql = "INSERT INTO usuario(idusuario, nomeusuario,senha, emailusuario, cpfusuario, datanascimentousuario, permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
 
-    //  $comando = $this->pdo->prepare($sql);
-    //  $comando->bindValue("e",$emailUsuario);
-    //  $comando->bindValue("s",$senhaUsuario);
+      $comando = $this->pdo->prepare($sql);
+      $comando->bindValue("i",$idUsuario);
+      $comando->bindValue("n",$nomeUsuario);
+      $comando->bindValue("s",$senha);
+      $comando->bindValue("e",$emailUsuario);
+      $comando->bindValue("c",$cpfUsuario);
+      $comando->bindValue("d",$dataNascimentoUsuario);
+      $comando->bindValue("p",$permissaoEspecial);
 
 
-    // return $comando->execute();
-    //  }
+     return $comando->execute();
+      }
 
     public function verificarSeExiste($idUsuario,$emailUsuario, $senha)
     {
@@ -38,19 +43,19 @@ class UsuariosBanco
 
     public function verificarSeAdmin($idUsuario)
     {
-        $sql = "SELECT * FROM usuarios WHERE IDUSUARIO=:i";
+        $sql = "SELECT * FROM usuarios WHERE idusuario= :i";
         $comando = $this->pdo->prepare($sql);
         $comando->bindValue("i", $idUsuario);
-
         $comando->execute();
         
-        $usuario =  $this->hidratarSomenteUm($comando->fetch(PDO::FETCH_ASSOC));
+        $resultado =  $comando->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuario->getPermissaoEspecial() == true){
+        $usuario = $this->hidratarSomenteUm($resultado);
+
+        if($usuario-> getPermissaoEspecial()==true){
             return true;
-        }else{
-        return false;
         }
+        return false;
     }
 
     public function hidratar($array)
@@ -74,6 +79,7 @@ class UsuariosBanco
 
     public function hidratarSomenteUm($array)
     {
+
         $usuario = new Usuarios();
         $usuario->setIdUsuario($array['IDUSUARIO']);
         $usuario->setNomeUsuario($array['NOMEUSUARIO']);
