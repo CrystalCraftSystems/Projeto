@@ -31,7 +31,7 @@
         <div class="field">
             <label class="label">Senha</label>
             <div class="control">
-                <input class="input" type="password" placeholder="Digite a senha do usuário" name="senha">
+                <input class="input" type="password" placeholder="Digite a senha do usuário" name="senha" required>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
         <div class="field">
             <label class="label">Data de Nascimento do Usuário</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a data de nascimento " name="dataNascimentoUsuario">
+                <input class="input" type="date" placeholder="Digite a data de nascimento " name="dataNascimentoUsuario">
             </div>
         </div>
 
@@ -54,11 +54,11 @@
                 <div class="control is-flex is-justify-content-space-around">
                    
                 <label class="radio">
-                        <input type="radio" name="permissao" />
+                <input type="radio" name="permissao" value="1" <?= !empty($usuario) && $usuario[0]->getPermissaoEspecial() == 1 ? 'checked' :''?> required>
                         Sim
                     </label>
                     <label class="radio">
-                        <input type="radio" name="permissao" />
+                    <input type="radio" name="permissao" value="0" <?= !empty($usuario) && $usuario[0]->getPermissaoEspecial() == 0 ? 'checked' :''?> >
                         Não
                     </label>
                 </div>

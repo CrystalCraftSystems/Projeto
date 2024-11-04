@@ -9,7 +9,7 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar funcionário<strong></h1>
-    <form action="funcionariosAdm.php" method="post">
+    <form action="./index.php?acao=cad-fun" method="post">
         <div class="field">
 
         <div class="field">
@@ -35,7 +35,7 @@
         <div class="field">
             <label class="label">Data de nascimento</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a data de nascimento YYYY-MM-DD" name="dataNascimentoFuncionario">
+                <input class="input" type="date" placeholder="Digite a data de nascimento" name="dataNascimentoFuncionario">
             </div>
         </div>
 

@@ -1,5 +1,4 @@
 <?php
-require __DIR__ . "/Usuarios.php";
 
 class UsuariosBanco
 {
@@ -13,8 +12,11 @@ class UsuariosBanco
     }
 
      public function cadastrarUsuario($idUsuario,$nomeUsuario, $senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
-      $sql = "INSERT INTO usuario(idusuario, nomeusuario,senha, emailusuario, cpfusuario, datanascimentousuario, permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
+      $sql = "INSERT INTO usuarios(idusuario, nomeusuario,senha, emailusuario, cpfusuario, datanascimentousuario, permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
 
+      $originalDate = $dataNascimentoUsuario;
+      $dataNascimentoUsuario = date("Y-m-d", strtotime($originalDate));
+      
       $comando = $this->pdo->prepare($sql);
       $comando->bindValue("i",$idUsuario);
       $comando->bindValue("n",$nomeUsuario);
@@ -22,12 +24,27 @@ class UsuariosBanco
       $comando->bindValue("e",$emailUsuario);
       $comando->bindValue("c",$cpfUsuario);
       $comando->bindValue("d",$dataNascimentoUsuario);
-      $comando->bindValue("p",$permissaoEspecial);
+      $comando->bindValue("p",$permissaoEspecial,PDO::PARAM_BOOL );
 
 
      return $comando->execute();
       }
-
+      public function cadastrarFuncionario($idFuncionario,$nomeFuncionario, $cpfFuncionario, $dataNascimentoFuncionario, $funcaoFuncionario){
+        $sql = "INSERT INTO funcionarios(idfuncionario, nomefuncionario, cpffuncionario, datanascimentofuncionario, funcaofuncionario) values (:i,:n,:c,:d,:f)";
+  
+        $originalDate = $dataNascimentoFuncionario;
+        $dataNascimentoFuncionario = date("Y-m-d", strtotime($originalDate));
+        
+        $comando = $this->pdo->prepare($sql);
+        $comando->bindValue("i",$idFuncionario);
+        $comando->bindValue("n",$nomeFuncionario);
+        $comando->bindValue("c",$cpfFuncionario);
+        $comando->bindValue("d",$dataNascimentoFuncionario);
+        $comando->bindValue("f",$funcaoFuncionario );
+  
+  
+       return $comando->execute();
+        }
     public function verificarSeExiste($idUsuario,$emailUsuario, $senha)
     {
         $sql = "SELECT * FROM usuarios WHERE IDUSUARIO= :i and EMAILUSUARIO=:e and SENHA = :s ";

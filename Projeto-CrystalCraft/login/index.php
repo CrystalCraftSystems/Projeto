@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . "/../App/Model/Usuarios.php";
+require __DIR__ . "/../App/Model/Funcionarios.php";
 require __DIR__ . "/Controller/validarUsuario.php";
 require __DIR__ . "/../App/Model/UsuariosBanco.php";
 require __DIR__ . "/../header.php";
@@ -10,3 +12,4 @@ if (isset($_GET['acao'])) {
         (new validarUsuario)->retornar();
     }
 }
+
