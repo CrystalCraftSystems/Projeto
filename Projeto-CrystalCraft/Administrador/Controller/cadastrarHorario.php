@@ -1,13 +1,15 @@
 <?php
 
-class cadastrarUsuario{
+
+class cadastrarHorario{
     public function retornar(){
-      $usuario = (new UsuariosBanco())->cadastrarUsuario($_POST['idUsuario'],$_POST['nomeUsuario'],$_POST['senha'], $_POST['emailUsuario'], $_POST['cpfUsuario'], $_POST['dataNascimentoUsuario'],$_POST['permissao']);
-      if($usuario){
+   
+      $horario = (new HorariosBanco())->cadastrarHorario($_POST['idVisitanteHorario'],$_POST['idRegistro'], $_POST['dataRegistro'], $_POST['horaEntrada'],$_POST['horaSaida'], $_POST['placaVeiculo']);
+      if($horario){
         $mensagem = '
         <div class="notification is-success">
             <button class="delete"></button>
-                Usuário cadastrado.
+                Registro de entrada/saída cadastrado com sucesso.
         </div>';
             echo $mensagem;
 
@@ -15,7 +17,7 @@ class cadastrarUsuario{
       $mensagem = '
       <div class="notification is-success">
           <button class="delete"></button>
-              Usuário não cadastrado.
+               Registro de entrada/saída não foi cadastrado.
       </div>';
       echo $mensagem;
       }

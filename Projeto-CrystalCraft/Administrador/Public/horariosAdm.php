@@ -8,17 +8,9 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Registrar horários de entrada e saída<strong></h1>
-    <form action="horariosAdm.php" method="post">
+    <form action="./index.php?acao=cad-horario" method="post">
        
-
-        <div class="field">
-            <label class="label">ID do registro</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID " name="idRegistro">
-            </div>
-        </div>
-
-        <div class="field">
+    <div class="field">
             <label class="label">ID do visitante</label>
             <div class="control">
                 <input class="input" type="text" placeholder="Digite o ID do visitante" name="idVisitanteHorario">
@@ -26,30 +18,37 @@
         </div>
 
         <div class="field">
+            <label class="label">ID do registro</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Digite o ID" name="idRegistro">
+            </div>
+        </div>
+
+        <div class="field">
             <label class="label">Placa do veículo</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a placa do veículo" name="placaHorario">
+                <input class="input" type="text" placeholder="Digite a placa do veículo" name="placaVeiculo">
             </div>
         </div>
 
         <div class="field">
             <label class="label">Data do registro</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a data do registro" name="dataHorario">
+                <input class="input" type="date" placeholder="Digite a data do registro" name="dataRegistro">
             </div>
         </div>
 
         <div class="field">
             <label class="label">Horário de entrada</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o horário da entrada" name="entradaHorario">
+                <input class="input" type="time" placeholder="Digite o horário da entrada" name="horaEntrada">
             </div>
         </div>
 
         <div class="field">
             <label class="label">Horário saída</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o horário da saída" name="saidaHorario">
+                <input class="input" type="time" placeholder="Digite o horário da saída" name="horaSaida">
             </div>
         </div>
 

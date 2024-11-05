@@ -3,8 +3,8 @@
 class Moradores{
 
     public string $idMorador;
-    public string $cpfMorador;
     public string $nomeMorador;
+    public string $cpfMorador;
     public Residencias $idResidencia;
     
  

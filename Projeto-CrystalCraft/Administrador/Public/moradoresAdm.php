@@ -8,7 +8,7 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar morador<strong></h1>
-    <form action="moradoresAdm.php" method="post">
+    <form action="./index.php?acao=cad-morador" method="post">
 
     <div class="field">
     <label class="label">ID do morador</label>
@@ -35,7 +35,7 @@
 <div class="field">
     <label class="label">ID da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o ID da residência do morador" name="IDResidenciaMorador">
+        <input class="input" type="text" placeholder="Digite o ID da residência do morador" name="idResidenciaMorador">
     </div>
 </div>
 

@@ -8,7 +8,7 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar residências e blocos<strong></h1>
-    <form action="residenciaAdm.php" method="post">
+    <form action="./index.php?acao=cad-residencia" method="post">
     <div class="field">
 
     <label class="label">ID da residência</label>
@@ -20,14 +20,14 @@
 <div class="field">
     <label class="label">Número da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o número da residência" name="numeroResidencia">
+        <input class="input" type="text" placeholder="Digite o número da residência" name="numResidencia">
     </div>
 </div>
 
 <div class="field">
     <label class="label">Bloco</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o bloco" name="blocoResidencia">
+        <input class="input" type="text" placeholder="Digite o bloco" name="bloco">
     </div>
 </div>
 

@@ -4,7 +4,7 @@ class Horarios{
     
     public Visitantes $idVisitante;
     public string $idRegistro;
-    public string $data;
+    public string $dataRegistro;
     public string $horaEntrada;
     public string $horaSaida;
     public string $placaVeiculo;
@@ -21,15 +21,15 @@ class Horarios{
         $this->idRegistro = $idRegistro;
     }
  
-    public function getData():string
+    public function getDataRegistro():string
     {
-        return $this->data;
+        return $this->dataRegistro;
     }
 
  
-    public function setData(string $data)
+    public function setData(string $dataRegistro)
     {
-        $this->data = $data;
+        $this->dataRegistro = $dataRegistro;
     }
 
     public function getHoraEntrada():string

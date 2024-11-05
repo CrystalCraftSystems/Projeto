@@ -8,7 +8,7 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar visitantes<strong></h1>
-    <form action="visitantesAdm.php" method="post">
+    <form action="./index.php?acao=cad-visitante" method="post">
     <div class="field">
 
     <label class="label">ID do visitante</label>
@@ -27,7 +27,7 @@
 <div class="field">
     <label class="label">Descrição</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite a descrição do visitante" name="descriçãoVisitante">
+        <input class="input" type="text" placeholder="Digite a descrição do visitante" name="descricaoVisitante">
     </div>
 </div>
 

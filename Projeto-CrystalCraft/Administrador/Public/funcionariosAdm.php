@@ -9,7 +9,7 @@
 
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar funcionário<strong></h1>
-    <form action="./index.php?acao=cad-fun" method="post">
+    <form action="./index.php?acao=cad-funcionario" method="post">
         <div class="field">
 
         <div class="field">

@@ -1,13 +1,15 @@
 <?php
 
-class cadastrarUsuario{
+
+class cadastrarMorador{
     public function retornar(){
-      $usuario = (new UsuariosBanco())->cadastrarUsuario($_POST['idUsuario'],$_POST['nomeUsuario'],$_POST['senha'], $_POST['emailUsuario'], $_POST['cpfUsuario'], $_POST['dataNascimentoUsuario'],$_POST['permissao']);
-      if($usuario){
+   
+      $morador = (new MoradoresBanco())->cadastrarMorador($_POST['idMorador'],$_POST['nomeMorador'], $_POST['cpfMorador'], $_POST['idResidenciaMorador']);
+      if($morador){
         $mensagem = '
         <div class="notification is-success">
             <button class="delete"></button>
-                Usuário cadastrado.
+                Morador cadastrado.
         </div>';
             echo $mensagem;
 
@@ -15,7 +17,7 @@ class cadastrarUsuario{
       $mensagem = '
       <div class="notification is-success">
           <button class="delete"></button>
-              Usuário não cadastrado.
+              Morador não cadastrado.
       </div>';
       echo $mensagem;
       }
