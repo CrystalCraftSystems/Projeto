@@ -21,20 +21,28 @@ require __DIR__ . "/../Controller/cadastrarMorador.php";
 require __DIR__ . "/../Controller/cadastrarHorario.php";
 require __DIR__ . "/../Controller/cadastrarVisitante.php";
 
+require __DIR__ . "/../Controller/excluirUsuario.php";
+require __DIR__ . "/../Controller/exibirUsuario.php";
+require __DIR__ . "/../Controller/editarUsuario.php";
+require __DIR__ . "/../../Login/Controller/validarUsuario.php";
+
 if (isset($_GET['acao'])) {
 
     if ($_GET['acao'] == "cad-usuario") {
-       echo (new cadastrarUsuario)->retornar();
+       echo (new CadastrarUsuario)->retornar();
        require __DIR__."/usuariosAdm.php";
     }
+    if ($_GET['acao'] == "consultar") {
+      echo (new ExibirUsuario)->retornar();
+   }
     if ($_GET['acao'] == "editar") {
-      echo (new editarUsuario)->retornar();
+       (new EditarUsuario)->retornar();
    }
    if ($_GET['acao'] == "atualizar") {
-      echo (new atualizarUsuario)->retornar();
+      echo (new AtualizarUsuario)->retornar();
    }
    if ($_GET['acao'] == "excluir") {
-      echo (new excluirUsuario)->retornar();
+      echo (new ExcluirUsuario)->retornar();
    }
 
    

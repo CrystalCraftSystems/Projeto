@@ -81,7 +81,7 @@ class UsuariosBanco
 
     public function hidratarSomenteUm($array)
     {
-
+    
         $usuario = new Usuarios();
         $usuario->setIdUsuario($array['IDUSUARIO']);
         $usuario->setNomeUsuario($array['NOMEUSUARIO']);
@@ -94,21 +94,27 @@ class UsuariosBanco
         return $usuario;
     }
 
+    public function buscarPorIdUsuario($idUsuario){
+        $sql = "SELECT * FROM usuarios WHERE idUsuario=:i";
 
-public function listarUsuario(){
+        $comando = $this->pdo->prepare($sql);
+        $comando->bindValue("i",$idUsuario);
+        $comando->execute();
+        $resultado = $comando->fetch(PDO::FETCH_ASSOC);
+
+        return $this->hidratarSomenteUm($resultado);
+    }
+public function ListarUsuario(){
 
  $sql = "SELECT * FROM usuarios";
  $comando = $this->pdo->prepare($sql);
-
  $comando->execute();
-
-
  $todosUsuarios = $comando->fetchAll(PDO::FETCH_ASSOC);
-
  return $this->hidratar($todosUsuarios) ;
+
  }
 
- public function editarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
+ public function EditarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
     $sql = "INSERT INTO usuarios(idusuario,nomeusuario,senha,emailusuario,cpfusuario,datanascimentousuario,permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
 
     $comando = $this->pdo->prepare($sql);
@@ -123,7 +129,7 @@ public function listarUsuario(){
     return $comando->execute();
 }
 
-public function atualizarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
+public function AtualizarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
     $sql = "UPDATE usuarios set idUsuario = :i, nomeusuario = :n, senha= :s, emailusuario=:e, cpfusuario=:c, datanascimentousuario=:d,  permissaoespecial = :p where idusuario = :i";
 
     $comando = $this->pdo->prepare($sql);
@@ -138,7 +144,7 @@ public function atualizarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $
     return $comando->execute();
 }
 
-public function excluirUsuario($idUsuario){
+public function ExcluirUsuario($idUsuario){
     $sql = "DELETE FROM usuarios WHERE idusuario = :i";
 
     $comando = $this->pdo->prepare($sql);

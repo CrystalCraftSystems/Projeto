@@ -22,7 +22,9 @@
                 </tr>
             </thead>
             <tbody>
+          
                 <?php if (isset($usuarios)): ?>
+                    
                     <?php foreach ($usuarios as $usuario): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($usuario->getIdUsuario()); ?></td>
@@ -33,8 +35,8 @@
                             <td><?php echo htmlspecialchars($usuario->getDataNascimentoUsuario()); ?></td>
                             <td><?= $usuario->getPermissaoEspecial() == "1"?"Sim":"Não" ?></td>
                             <td>
-                                <a class="button is-small is-info" href="/index.php?acao=editar&id=<?=$usuario->getIdUsuario()?>">Editar</a>
-                                <a class="button is-small is-danger" href="/index.php?acao=excluir&id=<?=$usuario->getIdUsuario()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar&idUsuario=<?=$usuario->getIdUsuario()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idUsuario=<?=$usuario->getIdUsuario()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -58,19 +60,19 @@
     <div class="field">
             <label class="label">ID do Usuário</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID do usuário" name="idUsuario">
+                <input class="input" type="text" placeholder="Digite o ID do usuário" name="idUsuario" required>
             </div>
         </div>
         <div class="field">
             <label class="label">Nome</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o nome do usuário" name="nomeUsuario">
+                <input class="input" type="text" placeholder="Digite o nome do usuário" name="nomeUsuario" required>
             </div>
         </div>
         <div class="field">
             <label class="label">Email</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o email do usuário" name="emailUsuario">
+                <input class="input" type="text" placeholder="Digite o email do usuário" name="emailUsuario" required>
             </div>
         </div>
         <div class="field">
@@ -83,13 +85,13 @@
         <div class="field">
             <label class="label">CPF</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o CPF do usuário" name="cpfUsuario">
+                <input class="input" type="text" placeholder="Digite o CPF do usuário" name="cpfUsuario" required>
             </div>
         </div>
         <div class="field">
             <label class="label">Data de Nascimento do Usuário</label>
             <div class="control">
-                <input class="input" type="date" placeholder="Digite a data de nascimento " name="dataNascimentoUsuario">
+                <input class="input" type="date" placeholder="Digite a data de nascimento " name="dataNascimentoUsuario" required>
             </div>
         </div>
 
@@ -97,13 +99,13 @@
             <label class="label">Possui permissão especial?</label>
             
                 <div class="control is-flex is-justify-content-space-around">
-                   
+                  
                 <label class="radio">
-                <input type="radio" name="permissao" value="1" <?= !empty($usuario) && $usuario[0]->getPermissaoEspecial() == 1 ? 'checked' :''?> required>
+                <input type="radio" name="permissao" value="1" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 1 ? 'checked' :''?> required>
                         Sim
                     </label>
                     <label class="radio">
-                    <input type="radio" name="permissao" value="0" <?= !empty($usuario) && $usuario[0]->getPermissaoEspecial() == 0 ? 'checked' :''?> >
+                    <input type="radio" name="permissao" value="0" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 0 ? 'checked' :''?> >
                         Não
                     </label>
                 </div>
