@@ -35,12 +35,7 @@ if (isset($_GET['acao'])) {
     if ($_GET['acao'] == "consultar") {
       echo (new ExibirUsuario)->retornar();
    }
-    if ($_GET['acao'] == "editar") {
-       (new EditarUsuario)->retornar();
-   }
-   if ($_GET['acao'] == "atualizar") {
-      echo (new AtualizarUsuario)->retornar();
-   }
+
    if ($_GET['acao'] == "excluir") {
       echo (new ExcluirUsuario)->retornar();
    }

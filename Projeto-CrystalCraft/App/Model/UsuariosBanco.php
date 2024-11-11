@@ -91,7 +91,8 @@ class UsuariosBanco
         $usuario->setDataNascimentoUsuario($array['DATANASCIMENTOUSUARIO']);
         $usuario->setPermissaoEspecial($array['PERMISSAOESPECIAL']);
 
-        return $usuario;
+       
+       return $usuario;
     }
 
     public function buscarPorIdUsuario($idUsuario){
@@ -115,7 +116,7 @@ public function ListarUsuario(){
  }
 
  public function EditarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
-    $sql = "INSERT INTO usuarios(idusuario,nomeusuario,senha,emailusuario,cpfusuario,datanascimentousuario,permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
+    $sql = "INSERT INTO usuarios(idusuarios,nomeusuario,senha,emailusuario,cpfusuario,datanascimentousuario,permissaoespecial) values (:i,:n,:s,:e,:c,:d,:p)";
 
     $comando = $this->pdo->prepare($sql);
     $comando->bindValue("i",$idUsuario);
@@ -130,7 +131,7 @@ public function ListarUsuario(){
 }
 
 public function AtualizarUsuario($idUsuario,$nomeUsuario,$senha,$emailUsuario, $cpfUsuario, $dataNascimentoUsuario, $permissaoEspecial){
-    $sql = "UPDATE usuarios set idUsuario = :i, nomeusuario = :n, senha= :s, emailusuario=:e, cpfusuario=:c, datanascimentousuario=:d,  permissaoespecial = :p where idusuario = :i";
+    $sql = "UPDATE usuarios set nomeusuario = :n, senha= :s, emailusuario=:e, cpfusuario=:c, datanascimentousuario=:d,  permissaoespecial = :p where idusuario = :i";
 
     $comando = $this->pdo->prepare($sql);
     $comando->bindValue("i",$idUsuario);

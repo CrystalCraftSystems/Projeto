@@ -39,7 +39,7 @@ class validarUsuario
         if (empty($usuarioExiste)) {
             die("Este usuário não existe!");
         }
-
+        $_SESSION['login'] = true;
         $mensagem = '
     <div class="notification is-success">
         <button class="delete"></button>
@@ -51,9 +51,11 @@ class validarUsuario
         $user = (new UsuariosBanco())->verificarSeAdmin($_POST['idUsuario']);
         if ($user) {
            require __DIR__."/../../Administrador/Public/usuariosAdm.php";
+           $_SESSION['adm'] = true;
    
         } else {
             require __DIR__."/../../UsuarioComum/Public/inicio.php";
+            $_SESSION['adm'] = false;
         }
 
     }

@@ -9,13 +9,12 @@
 <div class="box">
 
     <h1 class="title has-text-centered"><strong>Editar usuário<strong></h1>
-    <form action="./index.php?acao=editar" method="POST" >
-    <div class="field">
-            <label class="label">ID do Usuário</label>
-            <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID do usuário" name="idUsuario" value="<?= !empty($usuario) ? $usuario->getIdUsuario():''?>">
-            </div>
-        </div>
+    <form action="./index.php?acao=atualizar" method="POST" >
+    
+         
+                <input class="input" type="hidden" name="idUsuario" value="<?= !empty($usuario) ? $usuario->getIdUsuario():''?>">
+           
+      
         <div class="field">
             <label class="label">Nome</label>
             <div class="control">
@@ -54,11 +53,11 @@
                 <div class="control is-flex is-justify-content-space-around">
                   
                 <label class="radio">
-                <input type="radio" name="permissao" value="1" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 1 ? 'checked' :''?> required>
+                <input type="radio" name="permissaoEspecial" value="1" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 1 ? 'checked' :''?> required>
                         Sim
                     </label>
                     <label class="radio">
-                    <input type="radio" name="permissao" value="0" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 0 ? 'checked' :''?> >
+                    <input type="radio" name="permissaoEspecial" value="0" <?= !empty($usuario) && $usuario->getPermissaoEspecial() == 0 ? 'checked' :''?> >
                         Não
                     </label>
                 </div>

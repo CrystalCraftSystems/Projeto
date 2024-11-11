@@ -25,8 +25,10 @@ require __DIR__ . "/../Administrador/Controller/cadastrarVisitante.php";
 require __DIR__ . "/../Administrador/Controller/excluirUsuario.php";
 require __DIR__ . "/../Administrador/Controller/exibirUsuario.php";
 require __DIR__ . "/../Administrador/Controller/editarUsuario.php";
-require __DIR__ . "/Controller/validarUsuario.php";
+require __DIR__ . "/../Administrador/Controller/atualizarUsuario.php";
 
+require __DIR__ . "/Controller/validarUsuario.php";
+session_start();
 if (isset($_GET['acao'])) {
 
     if ($_GET['acao'] == "login") {
@@ -74,9 +76,20 @@ if ($_GET['acao'] == "cad-visitante") {
    echo (new cadastrarVisitante)->retornar();
    require __DIR__."/visitantesAdm.php";
 }
-   
+
+
 
 }
+if(isset($_SESSION['login'])){
+if($_SESSION['login']==true && $_SESSION['adm']==true){
+   
+}
 
+if($_SESSION['login']==true && $_SESSION['adm']==false){
+   echo "Página padrão";
+}
+}else{
+   echo "Não fez login! 🎃";
+}  
 
 
