@@ -49,13 +49,15 @@ class validarUsuario
         $usuarios = (new UsuariosBanco())->ListarUsuario();
 
         $user = (new UsuariosBanco())->verificarSeAdmin($_POST['idUsuario']);
+        
         if ($user) {
-           require __DIR__."/../../Administrador/Public/usuariosAdm.php";
+         
            $_SESSION['adm'] = true;
-   
+           require __DIR__."/../../Administrador/Public/usuariosAdm.php";
         } else {
-            require __DIR__."/../../UsuarioComum/Public/inicio.php";
+            
             $_SESSION['adm'] = false;
+            require __DIR__."/../../UsuarioComum/Public/inicio.php";
         }
 
     }

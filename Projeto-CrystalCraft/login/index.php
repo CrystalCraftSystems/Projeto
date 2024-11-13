@@ -29,6 +29,7 @@ require __DIR__ . "/../Administrador/Controller/atualizarUsuario.php";
 
 require __DIR__ . "/Controller/validarUsuario.php";
 session_start();
+
 if (isset($_GET['acao'])) {
 
     if ($_GET['acao'] == "login") {
@@ -38,7 +39,7 @@ if (isset($_GET['acao'])) {
     }
     if ($_GET['acao'] == "cad-usuario") {
       (new CadastrarUsuario)->retornar();
-      require __DIR__."/usuariosAdm.php";
+   
    }
    if ($_GET['acao'] == "editar") {
       (new EditarUsuario)->retornar();
@@ -82,14 +83,15 @@ if ($_GET['acao'] == "cad-visitante") {
 }
 if(isset($_SESSION['login'])){
 if($_SESSION['login']==true && $_SESSION['adm']==true){
-   
+
+  
+
 }
 
 if($_SESSION['login']==true && $_SESSION['adm']==false){
-   echo "Página padrão";
 }
 }else{
-   echo "Não fez login! 🎃";
+   echo "Não fez login! ";
 }  
 
 

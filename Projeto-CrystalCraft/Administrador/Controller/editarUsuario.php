@@ -8,7 +8,7 @@ class EditarUsuario
 
     
         $usuario = (new UsuariosBanco)->buscarPorIdUsuario($_GET['idUsuario']);
-        require __DIR__."/../Public/editar.php";
+        require __DIR__."/../Public/editarUsuarios.php";
 
         }
 }

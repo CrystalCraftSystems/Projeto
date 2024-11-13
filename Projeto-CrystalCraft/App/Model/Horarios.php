@@ -27,7 +27,7 @@ class Horarios{
     }
 
  
-    public function setData(string $dataRegistro)
+    public function setDataRegistro(string $dataRegistro)
     {
         $this->dataRegistro = $dataRegistro;
     }

@@ -6,6 +6,52 @@
     }
 </style>
 
+<section class="section">
+    <div class="container">
+    <h1 class="title has-text-centered"><strong>Listagem de horários de entrada e saída<strong></h1><br>
+        <table class="table is-fullwidth is-striped">
+            <thead>
+                <tr>
+                    <th>ID Visitante</th>
+                    <th>ID Registro</th>
+                    <th>Placa do veículo</th>
+                    <th>Data do registro</th>
+                    <th>Hora da entrada</th>
+                    <th>Hora da saída</th>
+                </tr>
+            </thead>
+            <tbody>
+          
+                <?php if (isset($registros)): ?>
+                    
+                    <?php foreach ($registros as $registro): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($registro->getIdVisitante()); ?></td>
+                            <td><?php echo htmlspecialchars($registro->getIdRegistro()); ?></td>
+                            <td><?php echo htmlspecialchars($registro->getPlacaVeiculo()); ?></td>
+                            <td><?php echo htmlspecialchars($registro->getDataRegistro()); ?></td>
+                            <td><?php echo htmlspecialchars($registro->getHoraEntrada()); ?></td>
+                            <td><?php echo htmlspecialchars($registro->getHoraSaida()); ?></td>
+                           
+                            <td>
+                                <a class="button is-small is-info" href="./index.php?acao=editar&idRegistro=<?=$usuario->getIdRegistro()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idRegistro=<?=$usuario->getIdRegistro()?>">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4" class="has-text-centered"><strong>Base de dados vazia!</strong></td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+<br>
+<br>
+
+
 <div class="box">
 <h1 class="title has-text-centered"><strong>Registrar horários de entrada e saída<strong></h1>
     <form action="./index.php?acao=cad-horario" method="post">

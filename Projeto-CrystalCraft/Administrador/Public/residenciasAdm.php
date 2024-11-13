@@ -6,6 +6,48 @@
     }
 </style>
 
+<section class="section">
+    <div class="container">
+    <h1 class="title has-text-centered"><strong>Listagem de residências<strong></h1><br>
+        <table class="table is-fullwidth is-striped">
+            <thead>
+                <tr>
+                    <th>ID Residência</th>
+                    <th>Número</th>
+                    <th>Bloco</th>
+                    <th>ID Morador</th>
+                </tr>
+            </thead>
+            <tbody>
+          
+                <?php if (isset($residencias)): ?>
+                    
+                    <?php foreach ($residencias as $residencia): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($residencia->getIdResidencia()); ?></td>
+                            <td><?php echo htmlspecialchars($residencia->getNumResidencia()); ?></td>
+                            <td><?php echo htmlspecialchars($residencia->getBloco()); ?></td>
+                            <td><?php echo htmlspecialchars($residencia->getIdMorador()); ?></td>
+                        
+                            <td>
+                                <a class="button is-small is-info" href="./index.php?acao=editar&idResidencia=<?=$residencia->getIdResidencia()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idResidencia=<?=$residencia->getIdResidencia()?>">Excluir</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="4" class="has-text-centered"><strong>Base de dados vazia!</strong></td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+
+<br>
+<br>
+
+
 <div class="box">
 <h1 class="title has-text-centered"><strong>Cadastrar residências e blocos<strong></h1>
     <form action="./index.php?acao=cad-residencia" method="post">
