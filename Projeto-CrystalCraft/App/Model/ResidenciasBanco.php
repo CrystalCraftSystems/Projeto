@@ -25,4 +25,31 @@ class ResidenciasBanco
   
        return $comando->execute();
         }
+
+        public function hidratar($array)
+        {
+            $todos = [];
+    
+            foreach ($array as $valor) {
+                $residencia = new Residencias();
+                $residencia->setIdresidencia($valor['IDresidencia']);
+                $residencia->setNumResidencia($valor['Numresidencia']);
+                $residencia->setBloco($valor['BLOCO']);
+               /* $residencia->setIdMorador($valor['IDMORADOR']);*/
+               
+    
+                $todos[] = $residencia;
+            }
+            return $todos;
+        }
+
+        public function ListarResidencia(){
+
+          $sql = "SELECT * FROM residencias";
+          $comando = $this->pdo->prepare($sql);
+          $comando->execute();
+          $todasResidencias = $comando->fetchAll(PDO::FETCH_ASSOC);
+          return $this->hidratar($todasResidencias) ;
+         
+          }
     }

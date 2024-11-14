@@ -24,4 +24,31 @@ class MoradoresBanco
        return $comando->execute();
 
         }
+
+        public function hidratar($array)
+        {
+            $todos = [];
+    
+            foreach ($array as $valor) {
+                $morador = new Moradores();
+                $morador->setIdMorador($valor['IDMorador']);
+                $morador->setNomeMorador($valor['NOMEMorador']);
+                $morador->setCpfMorador($valor['CPFMorador']);
+               /* $morador->setIdResidencia($valor['IDRESIDENCIA']);*/
+          
+    
+                $todos[] = $morador;
+            }
+            return $todos;
+        }
+
+        public function ListarMorador(){
+
+          $sql = "SELECT * FROM moradores";
+          $comando = $this->pdo->prepare($sql);
+          $comando->execute();
+          $todosMoradores = $comando->fetchAll(PDO::FETCH_ASSOC);
+          return $this->hidratar($todosMoradores) ;
+         
+          }
     }

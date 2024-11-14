@@ -28,4 +28,31 @@ class FuncionariosBanco
   
        return $comando->execute();
         }
+
+        public function hidratar($array)
+        {
+            $todos = [];
+    
+            foreach ($array as $valor) {
+                $Funcionario = new Funcionarios();
+                $Funcionario->setIdFuncionario($valor['IDFuncionario']);
+                $Funcionario->setNomeFuncionario($valor['NOMEFuncionario']);
+                $Funcionario->setCpfFuncionario($valor['CPFFuncionario']);
+                $Funcionario->setDataNascimentoFuncionario($valor['DATANASCIMENTOFuncionario']);
+                $Funcionario->setFuncaoFuncionario($valor['FuncaoFuncionario']);
+    
+                $todos[] = $Funcionario;
+            }
+            return $todos;
+        }
+
+        public function ListarFuncionario(){
+
+          $sql = "SELECT * FROM funcionarios";
+          $comando = $this->pdo->prepare($sql);
+          $comando->execute();
+          $todosFuncionarios = $comando->fetchAll(PDO::FETCH_ASSOC);
+          return $this->hidratar($todosFuncionarios) ;
+         
+          }
     }

@@ -30,8 +30,8 @@
                             <td><?php echo htmlspecialchars($residencia->getIdMorador()); ?></td>
                         
                             <td>
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idResidencia=<?=$residencia->getIdResidencia()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idResidencia=<?=$residencia->getIdResidencia()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-residencia&idResidencia=<?=$residencia->getIdResidencia()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-residencia&idResidencia=<?=$residencia->getIdResidencia()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -55,21 +55,21 @@
 
     <label class="label">ID da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o ID" name="idResidencia">
+        <input class="input" type="text" placeholder="Digite o ID" name="idResidencia" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">Número da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o número da residência" name="numResidencia">
+        <input class="input" type="text" placeholder="Digite o número da residência" name="numResidencia" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">Bloco</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o bloco" name="bloco">
+        <input class="input" type="text" placeholder="Digite o bloco" name="bloco" required>
     </div>
 </div>
 

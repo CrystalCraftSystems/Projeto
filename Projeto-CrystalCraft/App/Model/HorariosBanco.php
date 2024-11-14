@@ -35,4 +35,33 @@ class HorariosBanco
   
        return $comando->execute();
         }
+
+        public function hidratar($array)
+        {
+            $todos = [];
+    
+            foreach ($array as $valor) {
+                $horario = new Horarios();
+                /*$horario->setIdVisitante($valor['IDVISITANTE']);*/
+                $horario->setIdRegistro($valor['IDREGISTRO']);
+                $horario->setDataRegistro($valor['DATAREGISTRO']);
+                $horario->setHoraEntrada($valor['HORAENTRADA']);
+                $horario->setHoraSaida($valor['HORASAIDA']);
+                $horario->setPlacaVeiculo($valor['PLACAVEICULO']);
+                
+    
+                $todos[] = $horario;
+            }
+            return $todos;
+        }
+
+        public function ListarHorario(){
+
+          $sql = "SELECT * FROM horarios";
+          $comando = $this->pdo->prepare($sql);
+          $comando->execute();
+          $todosHorarios = $comando->fetchAll(PDO::FETCH_ASSOC);
+          return $this->hidratar($todosHorarios) ;
+         
+          }
     }

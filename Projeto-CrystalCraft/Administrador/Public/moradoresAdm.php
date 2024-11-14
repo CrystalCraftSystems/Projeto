@@ -30,8 +30,8 @@
                             <td><?php echo htmlspecialchars($morador->getIdResidencia()); ?></td>
                            
                             <td>
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idMorador=<?=$morador->getIdMorador()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idMorador=<?=$morador->getIdMorador()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-morador&idMorador=<?=$morador->getIdMorador()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-morador&idMorador=<?=$morador->getIdMorador()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -55,7 +55,7 @@
     <div class="field">
     <label class="label">ID do morador</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o ID do morador" name="idMorador">
+        <input class="input" type="text" placeholder="Digite o ID do morador" name="idMorador" required>
     </div>
 </div>
 
@@ -63,21 +63,21 @@
 
     <label class="label">Nome</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o nome do morador" name="nomeMorador">
+        <input class="input" type="text" placeholder="Digite o nome do morador" name="nomeMorador" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">CPF</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o CPF do morador" name="cpfMorador">
+        <input class="input" type="text" placeholder="Digite o CPF do morador" name="cpfMorador" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">ID da residência</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o ID da residência do morador" name="idResidenciaMorador">
+        <input class="input" type="text" placeholder="Digite o ID da residência do morador" name="idResidenciaMorador" required>
     </div>
 </div>
 

@@ -35,8 +35,8 @@
                             <td><?php echo htmlspecialchars($usuario->getDataNascimentoUsuario()); ?></td>
                             <td><?= $usuario->getPermissaoEspecial() == "1"?"Sim":"Não" ?></td>
                             <td>
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idUsuario=<?=$usuario->getIdUsuario()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idUsuario=<?=$usuario->getIdUsuario()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-usuario&idUsuario=<?=$usuario->getIdUsuario()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-usuario&idUsuario=<?=$usuario->getIdUsuario()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

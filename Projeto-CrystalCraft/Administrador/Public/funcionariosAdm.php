@@ -32,8 +32,8 @@
                             <td><?php echo htmlspecialchars($funcionario->getFuncaoFuncionario()); ?></td>
                            
                             <td>
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idFuncionario=<?=$funcionario->getIdFuncionario()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idFuncionario=<?=$funcionario->getIdFuncionario()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-funcionario&idFuncionario=<?=$funcionario->getIdFuncionario()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-funcionario&idFuncionario=<?=$funcionario->getIdFuncionario()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -58,34 +58,34 @@
         <div class="field">
             <label class="label">ID do funcionário</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID do funcionário" name="idFuncionario">
+                <input class="input" type="text" placeholder="Digite o ID do funcionário" name="idFuncionario" required>
             </div>
         </div>
 
             <label class="label">Nome</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o nome do funcionário" name="nomeFuncionario">
+                <input class="input" type="text" placeholder="Digite o nome do funcionário" name="nomeFuncionario" required>
             </div>
         </div>
 
         <div class="field">
             <label class="label">CPF</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o CPF do funcionário" name="cpfFuncionario">
+                <input class="input" type="text" placeholder="Digite o CPF do funcionário" name="cpfFuncionario" required>
             </div>
         </div>
 
         <div class="field">
             <label class="label">Data de nascimento</label>
             <div class="control">
-                <input class="input" type="date" placeholder="Digite a data de nascimento" name="dataNascimentoFuncionario">
+                <input class="input" type="date" placeholder="Digite a data de nascimento" name="dataNascimentoFuncionario" required>
             </div>
         </div>
 
         <div class="field">
             <label class="label">Função</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite a função do funcionário" name="funcaoFuncionario">
+                <input class="input" type="text" placeholder="Digite a função do funcionário" name="funcaoFuncionario" required>
             </div>
         </div>
 

@@ -34,8 +34,8 @@
                             <td><?php echo htmlspecialchars($registro->getHoraSaida()); ?></td>
                            
                             <td>
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idRegistro=<?=$usuario->getIdRegistro()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idRegistro=<?=$usuario->getIdRegistro()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-horario&idRegistro=<?=$usuario->getIdRegistro()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-horario&idRegistro=<?=$usuario->getIdRegistro()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -59,14 +59,14 @@
     <div class="field">
             <label class="label">ID do visitante</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID do visitante" name="idVisitanteHorario">
+                <input class="input" type="text" placeholder="Digite o ID do visitante" name="idVisitanteHorario" required>
             </div>
         </div>
 
         <div class="field">
             <label class="label">ID do registro</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Digite o ID" name="idRegistro">
+                <input class="input" type="text" placeholder="Digite o ID" name="idRegistro" required>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
         <div class="field">
             <label class="label">Data do registro</label>
             <div class="control">
-                <input class="input" type="date" placeholder="Digite a data do registro" name="dataRegistro">
+                <input class="input" type="date" placeholder="Digite a data do registro" name="dataRegistro" required>
             </div>
         </div>
 

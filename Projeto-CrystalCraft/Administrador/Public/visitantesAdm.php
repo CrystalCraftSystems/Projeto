@@ -30,8 +30,8 @@
                             <td><?php echo htmlspecialchars($visitante->getDescricaoVisitante()); ?></td>
                             <td><?php echo htmlspecialchars($visitante->getIdMorador()); ?></td>
                             
-                                <a class="button is-small is-info" href="./index.php?acao=editar&idVisitante=<?=$visitante->getIdVisitante()?>">Editar</a>
-                                <a class="button is-small is-danger" href="./index.php?acao=excluir&idVisitante=<?=$visitante->getIdVisitante()?>">Excluir</a>
+                                <a class="button is-small is-info" href="./index.php?acao=editar-visitante&idVisitante=<?=$visitante->getIdVisitante()?>">Editar</a>
+                                <a class="button is-small is-danger" href="./index.php?acao=excluir-visitante&idVisitante=<?=$visitante->getIdVisitante()?>">Excluir</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -55,21 +55,21 @@
 
     <label class="label">ID do visitante</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o ID" name="idVisitante">
+        <input class="input" type="text" placeholder="Digite o ID" name="idVisitante" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">Nome</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite o nome do visitante" name="nomeVisitante">
+        <input class="input" type="text" placeholder="Digite o nome do visitante" name="nomeVisitante" required>
     </div>
 </div>
 
 <div class="field">
     <label class="label">Descrição</label>
     <div class="control">
-        <input class="input" type="text" placeholder="Digite a descrição do visitante" name="descricaoVisitante">
+        <input class="input" type="text" placeholder="Digite a descrição do visitante" name="descricaoVisitante" required>
     </div>
 </div>
 
