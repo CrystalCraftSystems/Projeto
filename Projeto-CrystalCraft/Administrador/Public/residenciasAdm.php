@@ -79,10 +79,6 @@
         <input class="input" type="text" placeholder="Digite o ID do morador" name="idMoradorResidencia">
     </div>
 </div>
-
-
-
-
     <br>
 
 

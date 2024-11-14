@@ -29,7 +29,7 @@ class FuncionariosBanco
        return $comando->execute();
         }
 
-        public function hidratar($array)
+/*        public function hidratar($array)
         {
             $todos = [];
     
@@ -54,5 +54,5 @@ class FuncionariosBanco
           $todosFuncionarios = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todosFuncionarios) ;
          
-          }
+          }*/
     }

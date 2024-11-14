@@ -26,7 +26,7 @@ class ResidenciasBanco
        return $comando->execute();
         }
 
-        public function hidratar($array)
+       /* public function hidratar($array)
         {
             $todos = [];
     
@@ -35,7 +35,7 @@ class ResidenciasBanco
                 $residencia->setIdresidencia($valor['IDresidencia']);
                 $residencia->setNumResidencia($valor['Numresidencia']);
                 $residencia->setBloco($valor['BLOCO']);
-               /* $residencia->setIdMorador($valor['IDMORADOR']);*/
+               /* $residencia->setIdMorador($valor['IDMORADOR']);
                
     
                 $todos[] = $residencia;
@@ -51,5 +51,5 @@ class ResidenciasBanco
           $todasResidencias = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todasResidencias) ;
          
-          }
+          }*/
     }

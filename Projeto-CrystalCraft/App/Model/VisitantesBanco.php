@@ -25,7 +25,7 @@ class VisitantesBanco
        return $comando->execute();
         }
 
-        public function hidratar($array)
+    /*    public function hidratar($array)
         {
             $todos = [];
     
@@ -34,7 +34,7 @@ class VisitantesBanco
                 $visitante->setIdVisitante($valor['IDvisitante']);
                 $visitante->setNomeVisitante($valor['NOMEvisitante']);
                 $visitante->setDescricaoVisitante($valor['DESCRICAOVISITANTE']);
-                /*$visitante->setIdMorador($valor['IDMORADOR']);*/
+                $visitante->setIdMorador($valor['IDMORADOR']);
             
                 $todos[] = $visitante;
             }
@@ -49,5 +49,5 @@ class VisitantesBanco
           $todosVisitantes = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todosVisitantes) ;
          
-          }
+          }*/
     }
