@@ -23,14 +23,14 @@
 
 <nav class='is-flex has-background-text is-justify-content-space-evenly p-2'>
   
-    <a class="has-text-white-bis" href="../../Administrador/Public/usuariosAdm.php">Usuários</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/funcionariosAdm.php">Funcionários</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/horariosAdm.php">Horários</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/visitantesAdm.php">Visitantes</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/moradoresAdm.php">Moradores</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/residenciasAdm.php">Residências</a>
-    <a class="has-text-white-bis" href="../../Administrador/Public/logout.php">Sair</a>
+    <a class="has-text-white-bis" href="./index.php?menu=usuarios">Usuários</a>
+    <a class="has-text-white-bis" href="./index.php?menu=funcionarios">Funcionários</a>
+    <a class="has-text-white-bis" href="./index.php?menu=horarios">Horários</a>
+    <a class="has-text-white-bis" href="./index.php?menu=visitantes">Visitantes</a>
+    <a class="has-text-white-bis" href="./index.php?menu=moradores">Moradores</a>
+    <a class="has-text-white-bis" href="./index.php?menu=residencias">Residências</a>
+    <a class="has-text-white-bis" href="/?atualizar-residencia?../../Administrador/Public/logout.php">Sair</a>
 
-</nav>P
+</nav>
 
 

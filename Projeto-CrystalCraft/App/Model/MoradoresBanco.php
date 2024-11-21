@@ -24,17 +24,17 @@ class MoradoresBanco
        return $comando->execute();
 
         }
-/*
+
         public function hidratar($array)
         {
             $todos = [];
     
             foreach ($array as $valor) {
                 $morador = new Moradores();
-                $morador->setIdMorador($valor['IDMorador']);
-                $morador->setNomeMorador($valor['NOMEMorador']);
-                $morador->setCpfMorador($valor['CPFMorador']);
-               /* $morador->setIdResidencia($valor['IDRESIDENCIA']);
+                $morador->setIdMorador($valor['IDMORADOR']);
+                $morador->setNomeMorador($valor['NOMEMORADOR']);
+                $morador->setCpfMorador($valor['CPFMORADOR']);
+                //$morador->setIdResidencia($valor['IDRESIDENCIA']);
           
     
                 $todos[] = $morador;
@@ -50,5 +50,5 @@ class MoradoresBanco
           $todosMoradores = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todosMoradores) ;
          
-          }*/
+          }
     }

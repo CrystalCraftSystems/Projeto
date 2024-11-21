@@ -25,16 +25,16 @@ class VisitantesBanco
        return $comando->execute();
         }
 
-    /*    public function hidratar($array)
+       public function hidratar($array)
         {
             $todos = [];
     
             foreach ($array as $valor) {
                 $visitante = new Visitantes();
-                $visitante->setIdVisitante($valor['IDvisitante']);
-                $visitante->setNomeVisitante($valor['NOMEvisitante']);
+                $visitante->setIdVisitante($valor['IDVISITANTE']);
+                $visitante->setNomeVisitante($valor['NOMEVISITANTE']);
                 $visitante->setDescricaoVisitante($valor['DESCRICAOVISITANTE']);
-                $visitante->setIdMorador($valor['IDMORADOR']);
+               // $visitante->setIdMorador($valor['IDMORADOR']);
             
                 $todos[] = $visitante;
             }
@@ -49,5 +49,5 @@ class VisitantesBanco
           $todosVisitantes = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todosVisitantes) ;
          
-          }*/
+          }
     }

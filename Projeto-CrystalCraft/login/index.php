@@ -66,7 +66,7 @@ if ($_GET['acao'] == "excluir-usuario") {
  if ($_GET['acao'] == "cad-funcionario") {
      echo (new cadastrarFuncionario)->retornar();
      
-  }/*
+  }
 if ($_GET['acao'] == "editar-funcionario") {
       (new EditarFuncionario)->retornar();
   }
@@ -81,12 +81,12 @@ if ($_GET['acao'] == "atualizar-funcionario") {
 if ($_GET['acao'] == "excluir-funcionario") {
    echo (new ExcluirFuncionario)->retornar();
 }
-*/
+
 
   if ($_GET['acao'] == "cad-residencia") {
    echo (new cadastrarResidencia)->retornar();
 
-}/*
+}
 if ($_GET['acao'] == "editar-residencia") {
    (new EditarResidencia)->retornar();
 }
@@ -101,12 +101,12 @@ echo (new AtualizarResidencia)->retornar();
 if ($_GET['acao'] == "excluir-residencia") {
 echo (new ExcluirResidencia)->retornar();
 }
-*/
+
 
 if ($_GET['acao'] == "cad-morador") {
    echo (new cadastrarMorador)->retornar();
   
-}/*
+}
 if ($_GET['acao'] == "editar-morador") {
    (new EditarMorador)->retornar();
 }
@@ -121,12 +121,12 @@ echo (new AtualizarMorador)->retornar();
 if ($_GET['acao'] == "excluir-morador") {
 echo (new ExcluirMorador)->retornar();
 }
-*/
+
 
 if ($_GET['acao'] == "cad-horario") {
    echo (new cadastrarHorario)->retornar();
    
-}/*
+}
 if ($_GET['acao'] == "editar-horario") {
    (new EditarHorario)->retornar();
 }
@@ -141,12 +141,12 @@ echo (new AtualizarHorario)->retornar();
 if ($_GET['acao'] == "excluir-horario") {
 echo (new ExcluirHorario)->retornar();
 }
-*/
+
 
 if ($_GET['acao'] == "cad-visitante") {
    echo (new cadastrarVisitante)->retornar();
  
-}/*
+}
 if ($_GET['acao'] == "editar-visitante") {
    (new EditarVisitante)->retornar();
 }
@@ -161,11 +161,47 @@ echo (new AtualizarVisitante)->retornar();
 if ($_GET['acao'] == "excluir-visitante") {
 echo (new ExcluirVisitante)->retornar();
 }
-*/
+
 
 
 
 }
+
+if (isset($_GET['menu'])) {
+   
+if($_GET['menu']=="usuarios"){
+   $usuarios = (new UsuariosBanco())->ListarUsuario();
+   require __DIR__."/../Administrador/Public/usuariosAdm.php";
+}
+
+if($_GET['menu']=="funcionarios"){
+   $funcionarios = (new FuncionariosBanco())->ListarFuncionario();
+   require __DIR__."/../Administrador/Public/funcionariosAdm.php";
+}
+
+if($_GET['menu']=="horarios"){
+   $horarios = (new HorariosBanco())->ListarHorario();
+   require __DIR__."/../Administrador/Public/horariosAdm.php";
+}
+
+if($_GET['menu']=="visitantes"){
+   $visitantes = (new VisitantesBanco())->ListarVisitante();
+   require __DIR__."/../Administrador/Public/visitantesAdm.php";
+}
+
+if($_GET['menu']=="moradores"){
+   $moradores = (new MoradoresBanco())->ListarMorador();
+   require __DIR__."/../Administrador/Public/moradoresAdm.php";
+}
+
+if($_GET['menu']=="residencias"){
+   $residencias = (new ResidenciasBanco())->ListarResidencia();
+   require __DIR__."/../Administrador/Public/residenciasAdm.php";
+}
+
+}
+
+
 if(isset($_SESSION['login'])){
 if($_SESSION['login']==true && $_SESSION['adm']==true){
    $usuarios = (new UsuariosBanco())->ListarUsuario();

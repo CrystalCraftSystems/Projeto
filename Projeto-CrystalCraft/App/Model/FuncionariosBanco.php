@@ -29,17 +29,17 @@ class FuncionariosBanco
        return $comando->execute();
         }
 
-/*        public function hidratar($array)
+       public function hidratar($array)
         {
             $todos = [];
     
             foreach ($array as $valor) {
                 $Funcionario = new Funcionarios();
-                $Funcionario->setIdFuncionario($valor['IDFuncionario']);
-                $Funcionario->setNomeFuncionario($valor['NOMEFuncionario']);
-                $Funcionario->setCpfFuncionario($valor['CPFFuncionario']);
-                $Funcionario->setDataNascimentoFuncionario($valor['DATANASCIMENTOFuncionario']);
-                $Funcionario->setFuncaoFuncionario($valor['FuncaoFuncionario']);
+                $Funcionario->setIdFuncionario($valor['IDFUNCIONARIO']);
+                $Funcionario->setNomeFuncionario($valor['NOMEFUNCIONARIO']);
+                $Funcionario->setCpfFuncionario($valor['CPFFUNCIONARIO']);
+                $Funcionario->setDataNascimentoFuncionario($valor['DATANASCIMENTOFUNCIONARIO']);
+                $Funcionario->setFuncaoFuncionario($valor['FUNCAOFUNCIONARIO']);
     
                 $todos[] = $Funcionario;
             }
@@ -54,5 +54,5 @@ class FuncionariosBanco
           $todosFuncionarios = $comando->fetchAll(PDO::FETCH_ASSOC);
           return $this->hidratar($todosFuncionarios) ;
          
-          }*/
+          }
     }
